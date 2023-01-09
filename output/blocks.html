@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--
+ Project: Senbazuru
+ Author: Jan Kossick, https://jankossick.de/cv/
+-->
+<html><head>
+    <title>blocks - Senbazuru - by Omani Frei</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <style>
+        body, html {
+            margin: 0;
+            padding: 1cm;
+            width: 21cm;
+        }
+        
+        .template {
+            display: none;
+        }
+        
+        class {
+            display: inline-block;
+            width: 50mm;
+            margin: 5mm;
+            margin-left: 0;
+            padding: 5mm;
+            border: solid 1px #555;
+        }
+        block {
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            grid-template-rows: repeat(3, auto);
+            width: 3cm;
+            height: 3cm;
+        }
+        pixel {
+            display: block;
+            width: 1cm;
+            height: 1cm;
+            border: solid 1px #888;
+            color-adjust: exact;
+        }
+        pixel.black {
+            background-color: #000;
+        }
+        pixel.white {
+            background-color: #fff;
+        }
+        info {
+            display: block;
+            margin-bottom: 5mm;
+            font-family: monospace;
+        }
+    </style>
+</head><body class="crosses">
+    <h3>Blocks (Classification)</h3>
+
+    <div>
+        <span id="number-of-block-types"></span> block types<br />
+        <span id="number-of-blocks"></span> blocks
+    </div>
+    <class class="template">
+        <info></info>
+        <block>
+            <pixel></pixel>
+            <pixel></pixel>
+            <pixel></pixel>
+            <pixel></pixel>
+            <pixel></pixel>
+            <pixel></pixel>
+            <pixel></pixel>
+            <pixel></pixel>
+            <pixel></pixel>
+        </block>        
+    </class>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $.getJSON("data/blocks.json", function(blocks) {
+            
+            // number of block types
+            var countTypes = Object.keys(blocks).length;
+            // number of blocks
+            var countBlocks = 0;
+            Object.values(blocks).forEach(function(value) {
+                countBlocks += value;
+            });
+            // output numbers
+            $("#number-of-block-types").append(countTypes.toLocaleString());
+            $("#number-of-blocks").append(countBlocks.toLocaleString());
+            
+            for (var bin in blocks) {            
+                // create block
+                var newClass = $("class.template").clone().removeClass("template")
+                        .insertBefore("class.template");
+                
+                // color block                
+                for(var j = 0; j<= 9; j++) {
+                    switch(bin.substr(j, 1)) {
+                        case "0":
+                            $($("pixel", newClass)[j]).addClass("white");
+                        case "1":
+                            $($("pixel", newClass)[j]).addClass("black");
+                    }
+                }
+                
+                // add infos
+                $("info", newClass)
+                    .append(bin) // binary
+                    .append(" # count: ")
+                    .append(blocks[bin].toLocaleString()); // number of this block
+            }
+        });
+    </script>
+</body></html>

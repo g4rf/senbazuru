@@ -1,0 +1,158 @@
+/*
+ * Project: Senbazuru
+ * Author: Jan Kossick, https://jankossick.de/cv/
+ */
+html {
+  box-sizing: border-box;
+}
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+.template {
+  display: none !important;
+}
+/* index.html */
+body.index .statistics .table {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+body.index .statistics .table .cell {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  border: solid 1px #888;
+  padding: 3px;
+  width: 4em;
+  text-align: right;
+}
+body.index .statistics .table .cell .percent {
+  background-color: #ddd;
+}
+body.index .statistics .compares-info .line {
+  cursor: pointer;
+}
+body.index .statistics .compares-info .line:hover {
+  text-decoration: underline;
+}
+body.index .statistics .compares-info img {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  margin: 1px 25px 25px 1px;
+}
+/* two.html */
+body.two {
+  padding: 5vh 10vw;
+}
+body.two .wall {
+  position: fixed;
+  top: 15vh;
+}
+body.two .wall img {
+  border: solid 1px;
+  width: 30vw;
+  height: auto;
+  margin: 5vh 0;
+}
+body.two .wall img,
+body.two .wall select {
+  display: block;
+}
+body.two .a {
+  left: 5vw;
+}
+body.two .b {
+  right: 5vw;
+}
+body.two .info {
+  left: 35vw;
+  right: 35vw;
+  padding-top: 17vh;
+  text-align: center;
+  font-weight: bold;
+}
+/* all.html */
+body.all {
+  overflow: hidden;
+}
+body.all img {
+  width: 15vw;
+  height: auto;
+}
+body.all .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  padding-left: 2vw;
+  padding: 10px;
+  border-bottom: solid 1px #aaa;
+}
+body.all #filelist {
+  height: 100%;
+}
+body.all #low,
+body.all #high {
+  text-align: right;
+  padding-right: 5px;
+  width: 75px;
+}
+body.all .content {
+  position: fixed;
+  height: 100%;
+  overflow: hidden;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  border-right: solid 1px #aaa;
+}
+body.all .content .column {
+  display: inline-block;
+  width: 26vw;
+  vertical-align: top;
+  padding-left: 2vw;
+  height: 100%;
+  overflow: auto;
+}
+body.all .content .column.filelist {
+  width: 20vw;
+}
+body.all .content .image {
+  margin-bottom: 10px;
+}
+body.all .content .image * {
+  display: block;
+}
+/* presentation.html */
+body.presentation {
+  padding: 10vh 10vw;
+}
+body.presentation h3 {
+  text-align: center;
+}
+body.presentation #load {
+  display: none;
+}
+body.presentation .wall {
+  visibility: hidden;
+  position: fixed;
+  top: 15vh;
+  left: 5vw;
+  right: 5vw;
+  display: flex;
+  justify-content: center;
+}
+body.presentation .wall img {
+  border: solid 1px;
+  width: 30vw;
+  margin: 5vh;
+}
+body.presentation .wall .info {
+  padding-top: 17vh;
+  text-align: center;
+  font-weight: bold;
+}
+/*# sourceMappingURL=main.css.map */

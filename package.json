@@ -1,0 +1,11 @@
+{
+  "name": "senbazuru-pixels",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "live-server": "^1.2.2",
+    "live-server-https": "0.0.2"
+  }
+}

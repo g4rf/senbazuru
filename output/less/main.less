@@ -1,0 +1,181 @@
+/*
+ * Project: Senbazuru
+ * Author: Jan Kossick, https://jankossick.de/cv/
+ */
+
+html {
+  box-sizing: border-box;
+}
+*, ::before, ::after {
+  box-sizing: inherit;
+}
+
+.template {
+    display: none !important;
+}
+
+/* index.html */
+body.index .statistics {
+    .table {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .cell {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            border: solid 1px #888;
+            padding: 3px;
+            width: 4em;
+            text-align: right;
+
+            .percent {
+                background-color:
+                #ddd;
+            }
+        }
+    }
+
+    .compares-info {
+        .line {
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        img {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            margin: 1px 25px 25px 1px;
+        }
+    }
+}
+
+/* two.html */
+body.two {
+    padding: 5vh 10vw;
+
+    .wall {
+        position: fixed;
+        top: 15vh;
+        img {
+            border: solid 1px;
+            width: 30vw;
+            height: auto;
+            margin: 5vh 0;
+        }
+
+        img, select {
+            display: block;
+        }
+    }
+
+    .a { left: 5vw; }
+    .b { right: 5vw; }
+    .info {
+        left: 35vw;
+        right: 35vw;
+        padding-top: 17vh;
+        text-align: center;
+        font-weight: bold;
+    }
+}
+
+/* all.html */
+body.all {
+    overflow: hidden;
+
+    img {
+        width: 15vw;
+        height: auto;
+    }
+
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        padding-left: 2vw;
+        padding: 10px;
+        border-bottom: solid 1px #aaa;
+    }
+
+    #filelist {
+        height: 100%;
+    }
+    #low, #high {
+        text-align: right;
+        padding-right: 5px;
+        width: 75px;
+    }
+
+    .content {
+        position: fixed;
+        height: 100%;
+        overflow: hidden;
+
+        padding-top: 50px;
+        padding-bottom: 20px;
+        border-right: solid 1px #aaa;
+
+        .column {
+            display: inline-block;
+            width: 26vw;
+            &.filelist {
+                width: 20vw;
+            }
+            vertical-align: top;
+            padding-left: 2vw;
+
+            height: 100%;
+            overflow: auto;
+        }
+
+        .image {
+            margin-bottom: 10px;
+            * {
+                display: block;
+            }
+        }
+    }
+}
+
+/* presentation.html */
+body.presentation {
+    padding: 10vh 10vw;
+
+    h3 {
+        text-align: center;
+    }
+
+    #load {
+        display: none;
+    }
+
+    .wall {
+        visibility: hidden;
+        position: fixed;
+        top: 15vh;
+        left: 5vw;
+        right: 5vw;
+        display: flex;
+        justify-content: center;
+
+        img {
+            border: solid 1px;
+            width: 30vw;
+            margin: 5vh;
+        }
+
+        .info {
+            //display: none;
+            padding-top: 17vh;
+            text-align: center;
+            font-weight: bold;
+        }
+    }
+}

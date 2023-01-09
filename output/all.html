@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+ Project: Senbazuru
+ Author: Jan Kossick, https://jankossick.de/cv/
+-->
+<html><head>
+    <title>show all - Senbazuru - by Omani Frei</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/main.css" type="text/css" media="all" />
+</head><body class="all">
+    <div class="content">
+        <div class="column filelist">
+            <select size="2" id="filelist"></select>
+        </div>
+
+        <div class="column a">
+            <p class="name"></p>
+
+            <img class="a" alt="" src="" />
+            
+            <p>
+                <b>crosses</b>
+                <span class="crosses">#</span>
+            </p>
+            
+            <p><b>blocks :: frei count</b></p>
+            <p>1: <span class="block1">#</span></p>
+            <p>2: <span class="block2">#</span></p>
+            <p>3: <span class="block3">#</span></p>
+            <p>4: <span class="block4">#</span></p>
+            <p>5: <span class="block5">#</span></p>
+            <p>6: <span class="block6">#</span></p>
+            <p>7: <span class="block7">#</span></p>
+            <p>8: <span class="block8">#</span></p>
+        </div>
+
+        <div class="pixel1 column">
+            <p>one pixel comparison</p>
+
+            <div class="template image">
+                <img class="" alt="" src="" />
+                <span class="name"></span>
+                <span class="similarity"></span>
+            </div>
+        </div>
+        <div class="pixel5 column">
+            <p>five pixel comparison</p>
+
+            <div class="template image">
+                <img class="" alt="" src="" />
+                <span class="name"></span>
+                <span class="similarity"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <b>Senbazuru</b> ::
+        show matches between
+        <input id="low" type="number" value="90" />%
+        and <input id="high" type="number" value="100" />%
+    </div>
+
+    <script src="data/filelist.js"></script>
+    <!--script src="data/filelist5.js"></script-->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/all.js"></script>
+</body></html>
